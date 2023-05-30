@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                    *._           _.*   @   */
-/*   utils.c                                            |\  \\_//  /|     #   */
-/*                                                      \/         \/     $   */
-/*   By: olnytim <yearagotomorrow@gmail.com>           _|_    V  V  |_    %   */
-/*                                                  *=.    =  _*  =   .=* ^   */
-/*   Created: 2023/05/28 22:36:25 by olnytim           \= ___________=/   &   */
-/*   Updated: 2023/05/30 15:32:51 by olnytim                /     \       *   */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/28 22:36:25 by olnytim           #+#    #+#             */
+/*   Updated: 2023/05/30 17:43:54 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	argchecker(int ac, char **av)
 		{
 			j = 0;
 			if (!av[i][j])
-				ft_fail("Error!\n", i);
+				ft_fail("Error!\nThe arg is empty", i);
 			while (av[i][j])
 			{
 				if (!(av[i][j] >= '0' && av[i][j] <= '9'))
@@ -48,5 +48,5 @@ void	argchecker(int ac, char **av)
 	}
 	else
 		ft_fail("Error!\nThe invalid number of args", -1);
-	ft_suc("Everything is allright!\nThis is the end\n");
+	ft_suc("Everything is alright!\nThis is the end");
 }

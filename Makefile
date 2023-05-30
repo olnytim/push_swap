@@ -25,7 +25,7 @@ OBJF 		=	.done
 all:		add $(NAME)
 #
 $(NAME):	$(OBJPS) $(OBJUT) $(OBJF)
-	@$(CC) $(FLAGS) $(OBJPS) $(OBJUT) $(OBJF) $(HEADER) $(LIBFT_PATH)/libft.a -o $@
+	@$(CC) $(FLAGS) $(OBJPS) $(OBJUT) $(HEADER) $(LIBFT_PATH)/libft.a -o $@
 #
 $(PREF_OBJ)%.o:	$(PREF_S)%.c $(OBJF)
 			@$(CC) $(FLAGS) $(HEADER) -c $< -o $@
