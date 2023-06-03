@@ -6,7 +6,7 @@
 /*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 22:36:25 by olnytim           #+#    #+#             */
-/*   Updated: 2023/05/30 17:43:54 by tgalyaut         ###   ########.fr       */
+/*   Updated: 2023/06/03 19:16:25 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ int	ft_fail(char *str, int arg)
 {
 	ft_printf("%s, %d\n", str, arg);
 	exit(1);
+}
+
+int	ft_fail2(char *str, int arg)
+{
+	ft_printf("%s, %d\n", str, arg);
+	exit(0);
 }
 
 int	ft_suc(char *str)
