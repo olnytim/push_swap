@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 22:36:25 by olnytim           #+#    #+#             */
-/*   Updated: 2023/06/03 19:16:25 by tgalyaut         ###   ########.fr       */
+/*   Updated: 2023/06/20 21:53:39 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,26 +30,19 @@ int	ft_suc(char *str)
 	return (1);
 }
 
-void	argchecker(int ac, char **av)
+void	argchecker(int ac, char **av, t_stack *a)
 {
 	int	i;
-	int	j;
 
 	if (ac > 1)
 	{
 		i = 1;
 		while (av[i])
 		{
-			j = 0;
-			if (!av[i][j])
-				ft_fail("Error!\nThe arg is empty", i);
-			while (av[i][j])
-			{
-				if (!(av[i][j] >= '0' && av[i][j] <= '9'))
-					ft_fail("Error!\nThe arg is not number!", i);
-				j++;
-			}
-			i++;
+			if (ft_isnum(av[i]) == 1)
+				ft_fail2("Error!\nInvalid number of args", i);
+			ft_push(a, ft_atoi(av[i]));
+			++i;
 		}
 	}
 	else
