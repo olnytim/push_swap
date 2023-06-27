@@ -38,10 +38,11 @@ int	ft_isnum(char *str)
 int	main(int ac, char **av)
 {
 	struct s_stack	*a;
-	struct s_stack	*b;
+	// struct s_stack	*b;
 
 	a = ft_set_stack();
-	b = ft_set_stack();
+	// b = ft_set_stack();
 	argchecker(ac, av, a);
+	ft_print(a);
 	return (0);
 }

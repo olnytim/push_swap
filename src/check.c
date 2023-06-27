@@ -36,13 +36,13 @@ void	argchecker(int ac, char **av, t_stack *a)
 
 	if (ac > 1)
 	{
-		i = 1;
-		while (av[i])
+		i = ac - 1;
+		while (av[i] && i > 0)
 		{
 			if (ft_isnum(av[i]) == 1)
 				ft_fail2("Error!\nInvalid number of args", i);
 			ft_push(a, ft_atoi(av[i]));
-			++i;
+			--i;
 		}
 	}
 	else
