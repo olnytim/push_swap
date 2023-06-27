@@ -6,7 +6,7 @@
 /*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 17:34:43 by tgalyaut          #+#    #+#             */
-/*   Updated: 2023/06/20 18:31:58 by tgalyaut         ###   ########.fr       */
+/*   Updated: 2023/06/27 18:10:35 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	rrb(t_stack *stack)
 	ft_printf("rrb\n");
 }
 
-void	rrr(t_stack *stack)
+void	rrr(t_stack *a, t_stack *b)
 {
 	rra(a);
 	rrb(b);

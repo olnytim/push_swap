@@ -6,7 +6,7 @@
 /*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 19:37:07 by tgalyaut          #+#    #+#             */
-/*   Updated: 2023/06/20 21:01:20 by tgalyaut         ###   ########.fr       */
+/*   Updated: 2023/06/27 19:15:52 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	pa(t_stack *stack1, t_stack *stack2)
 	if (ft_empty(stack2))
 		return ;
 	temp = ft_pop(stack2);
-	push(stack1, temp);
+	ft_push(stack1, temp);
 	ft_printf("pa\n");
 }
 
@@ -71,6 +71,6 @@ void	pb(t_stack *stack1, t_stack *stack2)
 	if (ft_empty(stack1))
 		return ;
 	temp = ft_pop(stack1);
-	push(stack2, temp);
+	ft_push(stack2, temp);
 	ft_printf("pb\n");
 }

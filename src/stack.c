@@ -6,7 +6,7 @@
 /*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 00:30:42 by tgalyaut          #+#    #+#             */
-/*   Updated: 2023/06/20 21:54:33 by tgalyaut         ###   ########.fr       */
+/*   Updated: 2023/06/27 19:05:18 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_first(struct s_stack *stack)
 	return (stack->first->value);
 }
 
-struct s_stack	*ft_set_stack(void)
+t_stack	*ft_set_stack(void)
 {
 	struct s_stack	*new;
 
