@@ -37,7 +37,7 @@ void	sorting_1(t_stack *a)
 	else if (a->first->value == value->max)
 	{
 		if (a->first->next->value == value->half)
-			sa_ra(a);
+			sa_rra(a);
 		else
 			ra(a);
 	}
@@ -74,4 +74,21 @@ void	sorting_2(t_stack *a, t_stack *b)
 	}
 	while (!ft_empty(b))
 		pa(a, b);
+}
+
+void	sorting_3(t_stack *a, t_stack *b)
+{
+	pb(a, b);
+	pb(a, b);
+	sorting_1(a);
+	while (!ft_empty(b))
+	{
+		if (b->first->value <= a->first->value)
+			pa(a, b);
+		else if (b->first->value >= ft_max(a))
+		{
+			pa(a, b);
+			ra(a);
+		}
+	}
 }

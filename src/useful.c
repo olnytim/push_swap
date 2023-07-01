@@ -43,3 +43,9 @@ void	sa_ra(t_stack *a)
 	sa(a);
 	ra(a);
 }
+
+void	sa_rra(t_stack *a)
+{
+	sa(a);
+	rra(a);
+}

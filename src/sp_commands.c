@@ -16,16 +16,14 @@ void	sa(t_stack *stack)
 {
 	t_node	*a;
 	t_node	*b;
-	t_node	*c;
 
 	if (!ft_empty(stack) && stack->first->next)
 	{
 		a = stack->first;
 		b = stack->first->next;
-		c = stack->first->next->next;
-		b = c;
-		c = a;
-		a = b;
+		a->next = b->next;
+		b->next = a;
+		stack->first = b;
 	}
 	ft_printf("sa\n");
 }
@@ -46,10 +44,10 @@ void	sb(t_stack *stack)
 	ft_printf("sb\n");
 }
 
-void	ss(t_stack *stack)
+void	ss(t_stack *stack1, t_stack *stack2)
 {
-	sa(stack);
-	sb(stack);
+	sa(stack1);
+	sb(stack2);
 	ft_printf("ss\n");
 }
 

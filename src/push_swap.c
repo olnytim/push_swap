@@ -73,7 +73,6 @@ int	main(int ac, char **av)
 	ft_push_swap(a, b);
 	ft_print(a);
 	ft_print(b);
-	free(a);
-	// system("leaks push_swap");
+	system("curl parrot.live");
 	return (0);
 }

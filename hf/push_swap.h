@@ -37,7 +37,7 @@ typedef struct s_comp
 void			argchecker(int ac, char **av, t_stack *a);
 void			sa(t_stack *stack);
 void			sb(t_stack *stack);
-void			ss(t_stack *stack);
+void			ss(t_stack *stack1, t_stack *stack2);
 void			pa(t_stack *stack1, t_stack *stack2);
 void			pb(t_stack *stack1, t_stack *stack2);
 void			ra(t_stack *stack);
@@ -47,6 +47,7 @@ void			rra(t_stack *stack);
 void			rrb(t_stack *stack);
 void			rrr(t_stack *a, t_stack *b);
 void			sa_ra(t_stack *a);
+void			sa_rra(t_stack *a);
 void			ft_push(struct s_stack *stack, int content);
 void			ft_give_values(t_stack *a, t_comp *value);
 void			sorting_0(t_stack *a);

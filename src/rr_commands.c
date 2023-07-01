@@ -26,8 +26,9 @@ void	rra(t_stack *stack)
 	while (b->next->next)
 		b = b->next;
 	c = b->next;
+	c->next = a;
 	b->next = NULL;
-	a = c;
+	stack->first = c;
 	ft_printf("rra\n");
 }
 
@@ -45,8 +46,9 @@ void	rrb(t_stack *stack)
 	while (b->next->next)
 		b = b->next;
 	c = b->next;
+	c->next = a;
 	b->next = NULL;
-	a = c;
+	stack->first = c;
 	ft_printf("rrb\n");
 }
 
