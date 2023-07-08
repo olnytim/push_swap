@@ -41,7 +41,7 @@ $(NAME)	:			$(OBJ_FILES)
 				@echo "Library $@ created successfully!"
 
 # Rule for creating object files
-$(OBJ_DIR)/%.o	:	$(SRC_DIR)/%.c | $(OBJ_DIR)
+$(OBJ_DIR)/%.o	:	$(SRC_DIR)/%.c Makefile | $(OBJ_DIR)
 				@$(CC) $(CFLAGS) -I . -c $< -o $@
 
 # Rule for creating the obj directory

@@ -6,22 +6,11 @@
 /*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 18:42:19 by tgalyaut          #+#    #+#             */
-/*   Updated: 2023/06/27 20:26:21 by tgalyaut         ###   ########.fr       */
+/*   Updated: 2023/07/08 19:48:36 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../hf/push_swap.h"
-
-t_comp	*ft_set_values(void)
-{
-	struct s_comp	*value;
-
-	value = malloc(sizeof(struct s_comp));
-	value->half = 0;
-	value->max = 0;
-	value->min = 0;
-	return (value);
-}
 
 int	ft_counter(t_stack *a)
 {
@@ -38,14 +27,70 @@ int	ft_counter(t_stack *a)
 	return (i);
 }
 
-void	sa_ra(t_stack *a)
+int	*ft_array(t_stack *stack)
 {
-	sa(a);
-	ra(a);
+	int		*array;
+	t_node	*temp;
+	int		i;
+
+	i = 0;
+	temp = stack->first;
+	array = malloc(sizeof(int) * ft_counter(stack));
+	while (temp)
+	{
+		array[i++] = temp->value;
+		temp = temp->next;
+	}
+	return (array);
 }
 
-void	sa_rra(t_stack *a)
+int	*ft_sort_array(t_stack *stack, int *array)
 {
-	sa(a);
-	rra(a);
+	int	i;
+	int	j;
+	int	temp;
+	int	size;
+
+	i = 0;
+	size = ft_counter(stack);
+	while (i < size - 1)
+	{
+		j = 0;
+		while (j < size - i - 1)
+		{
+			if (array[j] > array[j + 1])
+			{
+				temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
+			}
+			++j;
+		}
+		++i;
+	}
+	return (array);
+}
+
+void	ft_array_compare(t_stack *stack, int *array)
+{
+	t_node	*temp;
+	int		i;
+
+	temp = stack->first;
+	i = 0;
+	while (temp)
+	{
+		i = 0;
+		while (i < ft_counter(stack))
+		{
+			if (temp->value == array[i])
+			{
+				temp->index = i;
+				break;
+			}
+			++i;
+		}
+		temp = temp->next;
+	}
+	free(array);
 }

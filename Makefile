@@ -8,13 +8,13 @@ PREF_OBJ 	=	obj
 HF_DIR 		=	hf
 HEADER 		=	-I$(HF_DIR)
 #
-SRCS 		=	$(addprefix $(PREF_S)/, push_swap.c parse.c stack.c checker.c sp_commands.c r_commands.c rr_commands.c useful.c sorting.c)
+SRCS 		=	$(addprefix $(PREF_S)/, push_swap.c parse.c stack.c sp_commands.c r_commands.c rr_commands.c useful.c sorting.c)
 OBJS 		=	$(patsubst $(PREF_S)/%.c, $(PREF_OBJ)/%.o, $(SRCS))
 DEPS 		=	$(OBJS:.o=.d)
 #
 CC 			=	cc
-FLAGS 		=	-Wall -Werror -Wextra
-FSANITIZE 	=	-fsanitize=address -g3
+FLAGS 		=	-Wall -Werror -Wextra -g
+FSANITIZE 	=	-fsanitize=address 
 #
 all:	$(NAME)
 #

@@ -6,7 +6,7 @@
 /*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 19:56:05 by tgalyaut          #+#    #+#             */
-/*   Updated: 2023/06/27 18:30:40 by tgalyaut         ###   ########.fr       */
+/*   Updated: 2023/07/04 16:59:48 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ra(t_stack *stack)
 	t_node	*temp1;
 	t_node	*temp2;
 
-	if (ft_empty(stack) || !stack->first->next)
+	if (ft_empty(stack) || stack->first->next == NULL)
 		return ;
 	temp1 = stack->first;
 	temp2 = stack->first;
