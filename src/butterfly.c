@@ -6,13 +6,13 @@
 /*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 18:30:40 by tgalyaut          #+#    #+#             */
-/*   Updated: 2023/07/04 18:30:41 by tgalyaut         ###   ########.fr       */
+/*   Updated: 2023/07/11 21:26:03 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../hf/push_swap.h"
 
-int	ft_max_index(t_stack *stack, size_t i)
+int	ft_max_index(t_stack *stack, int i)
 {
 	t_node	*temp;
 
@@ -26,20 +26,20 @@ int	ft_max_index(t_stack *stack, size_t i)
 	return (0);
 }
 
-size_t	ft_range(size_t i)
+int	ft_range(int i)
 {
-	size_t	j;
+	int	j;
 
 	j = 1;
-	while (j * j < i * 2)
+	while (j * j < i * 4)
 		++j;
 	return (j);
 }
 
-void	ft_butterfly(t_stack *a, t_stack *b, size_t i)
+void	ft_butterfly(t_stack *a, t_stack *b, int i)
 {
-	size_t	j;
-	size_t	range;
+	int	j;
+	int	range;
 
 	range = ft_range(i);
 	j = 0;
@@ -61,7 +61,7 @@ void	ft_butterfly(t_stack *a, t_stack *b, size_t i)
 	}
 }
 
-void	ft_push_all(t_stack *a, t_stack *b, size_t	i)
+void	ft_push_all(t_stack *a, t_stack *b, int i)
 {
 	while (i > 0)
 	{

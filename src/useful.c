@@ -6,7 +6,7 @@
 /*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 18:42:19 by tgalyaut          #+#    #+#             */
-/*   Updated: 2023/07/08 19:48:36 by tgalyaut         ###   ########.fr       */
+/*   Updated: 2023/07/11 21:25:36 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_counter(t_stack *a)
 	return (i);
 }
 
-int	*ft_array(t_stack *stack)
+int	*ft_array(t_stack *stack, int length)
 {
 	int		*array;
 	t_node	*temp;
@@ -35,7 +35,7 @@ int	*ft_array(t_stack *stack)
 
 	i = 0;
 	temp = stack->first;
-	array = malloc(sizeof(int) * ft_counter(stack));
+	array = malloc(sizeof(int) * length);
 	while (temp)
 	{
 		array[i++] = temp->value;
@@ -44,19 +44,17 @@ int	*ft_array(t_stack *stack)
 	return (array);
 }
 
-int	*ft_sort_array(t_stack *stack, int *array)
+int	*ft_sort_array(int *array, int length)
 {
 	int	i;
 	int	j;
 	int	temp;
-	int	size;
 
 	i = 0;
-	size = ft_counter(stack);
-	while (i < size - 1)
+	while (i < length - 1)
 	{
 		j = 0;
-		while (j < size - i - 1)
+		while (j < length - i - 1)
 		{
 			if (array[j] > array[j + 1])
 			{
@@ -71,22 +69,21 @@ int	*ft_sort_array(t_stack *stack, int *array)
 	return (array);
 }
 
-void	ft_array_compare(t_stack *stack, int *array)
+void	ft_array_compare(t_stack *stack, int *array, int length)
 {
 	t_node	*temp;
 	int		i;
 
 	temp = stack->first;
-	i = 0;
 	while (temp)
 	{
 		i = 0;
-		while (i < ft_counter(stack))
+		while (i < length)
 		{
 			if (temp->value == array[i])
 			{
 				temp->index = i;
-				break;
+				break ;
 			}
 			++i;
 		}

@@ -6,7 +6,7 @@
 /*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 20:17:52 by tgalyaut          #+#    #+#             */
-/*   Updated: 2023/07/08 22:32:41 by tgalyaut         ###   ########.fr       */
+/*   Updated: 2023/07/11 21:26:47 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,6 @@ char	*ft_strjoin_gnl(char *string1, char *string2)
 	char	*temp;
 	char	*beg;
 
-	// if (!string1)
-	// {
-	// 	string1 = (char *)malloc(1);
-	// 	string1[0] = '\0';
-	// }
-	// if (!string1 || !string2)
-	// 	return (NULL);
 	result = (char *)malloc(ft_strlen_gnl(string1) \
 	+ ft_strlen_gnl(string2) + 1);
 	if (!result)

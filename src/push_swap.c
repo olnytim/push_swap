@@ -6,26 +6,20 @@
 /*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 22:36:18 by olnytim           #+#    #+#             */
-/*   Updated: 2023/07/08 22:38:16 by tgalyaut         ###   ########.fr       */
+/*   Updated: 2023/07/11 22:47:36 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../hf/push_swap.h"
 #include <stdio.h>
 
-void	ft_print(struct s_stack *stack)
+void	ft_error(char *str)
 {
-	t_node	*temp;
-
-	temp = stack->first;
-	while (temp)
-	{
-		ft_printf("Number is: %d index[%d]\n", temp->value, temp->index);
-		temp = temp->next;
-	}
+	ft_printf(str);
+	exit(1);
 }
 
-int	ft_done(t_stack *a)
+static int	ft_done(t_stack *a)
 {
 	t_node	*temp;
 
@@ -39,11 +33,11 @@ int	ft_done(t_stack *a)
 	return (0);
 }
 
-void	ft_push_swap(t_stack *a, t_stack *b)
+static void	ft_push_swap(t_stack *a, t_stack *b)
 {
-	size_t	i;
+	int	i;
 
-	i = (size_t)ft_counter(a);
+	i = (int)ft_counter(a);
 	if (i == 2)
 		sorting_2(a);
 	else if (i == 3)
@@ -59,11 +53,10 @@ void	ft_push_swap(t_stack *a, t_stack *b)
 	}
 }
 
-int	main(int ac, char **av)
+static char	*ft_set_array(char **av)
 {
-	struct s_stack	*a;
-	struct s_stack	*b;
-	char			*str;
+	char	*str;
+	int		ac;
 
 	ac = 1;
 	str = ft_strdup(av[ac++]);
@@ -73,19 +66,28 @@ int	main(int ac, char **av)
 		str = ft_strjoin_gnl(str, av[ac]);
 		++ac;
 	}
-	// ft_printf("%s\n", str);
-	a = ft_set_stack();
-	ft_argchecker(ac, str, a);
-	if (!ft_done(a))
-		return (0);
-	ft_array_compare(a, ft_sort_array(a, ft_array(a)));
-	b = ft_set_stack();
-	ft_push_swap(a, b);
-	// ft_printf("------------\n");
-	// ft_print(a);
-	// system("leaks push_swap");
-	return (0);
+	return (str);
 }
 
+int	main(int ac, char **av)
+{
+	struct s_stack	*a;
+	struct s_stack	*b;
+	char			*str;
 
-// 3 -8 9 10 -10 11
+	if (ac < 2)
+		ft_error("Error\n");
+	else
+	{
+		str = ft_set_array(av);
+		a = ft_set_stack();
+		ft_argchecker(str, a);
+		if (!ft_done(a))
+			return (0);
+		ac = ft_counter(a);
+		ft_array_compare(a, ft_sort_array(ft_array(a, ac), ac), ac);
+		b = ft_set_stack();
+		ft_push_swap(a, b);
+	}
+	return (0);
+}

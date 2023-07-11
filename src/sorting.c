@@ -6,7 +6,7 @@
 /*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 19:01:41 by tgalyaut          #+#    #+#             */
-/*   Updated: 2023/07/04 18:45:38 by tgalyaut         ###   ########.fr       */
+/*   Updated: 2023/07/11 21:08:48 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ static void	sorting_5_1(t_stack *a)
 
 void	sorting_5(t_stack *a, t_stack *b)
 {
-	size_t	j;
-	size_t	i;
+	int	j;
+	int	i;
 
 	i = 2;
 	j = 0;

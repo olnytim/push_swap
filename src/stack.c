@@ -6,7 +6,7 @@
 /*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 00:30:42 by tgalyaut          #+#    #+#             */
-/*   Updated: 2023/06/27 19:05:18 by tgalyaut         ###   ########.fr       */
+/*   Updated: 2023/07/11 21:09:13 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,28 +19,27 @@ int	ft_empty(struct s_stack *stack)
 	return (0);
 }
 
-void	ft_push(struct s_stack *stack, int content)
+void	ft_push(struct s_stack *stack, int content, int index)
 {
 	struct s_node	*new;
 
 	new = malloc(sizeof(struct s_node));
 	new->value = content;
 	new->next = stack->first;
+	new->index = index;
 	stack->first = new;
 }
 
-int	ft_pop(struct s_stack *stack)
+t_node	ft_pop(struct s_stack *stack)
 {
-	int				pop;
 	struct s_node	*temp;
+	struct s_node	result;
 
-	if (ft_empty(stack))
-		return (-1);
-	pop = stack->first->value;
+	result = (*stack->first);
 	temp = stack->first;
 	stack->first = stack->first->next;
 	free(temp);
-	return (pop);
+	return (result);
 }
 
 int	ft_first(struct s_stack *stack)

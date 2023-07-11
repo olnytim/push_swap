@@ -17,6 +17,7 @@ FLAGS 		=	-Wall -Werror -Wextra -g
 FSANITIZE 	=	-fsanitize=address 
 #
 all:	$(NAME)
+			@echo > /dev/null
 #
 $(NAME):	$(OBJS) $(LIBFTA)
 			@$(CC) $(FLAGS) $(OBJS) $(LIBFTA) -o $@
