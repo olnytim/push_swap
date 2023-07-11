@@ -42,6 +42,11 @@ void			rrb(t_stack *stack);
 void			rrr(t_stack *a, t_stack *b);
 void			ft_push(struct s_stack *stack, int content);
 void			sorting_2(t_stack *a);
+void			sorting_3(t_stack *a);
+void			sorting_4(t_stack *a, t_stack *b);
+void			sorting_5(t_stack *a, t_stack *b);
+void			ft_butterfly(t_stack *a, t_stack *b, size_t i);
+void			ft_push_all(t_stack *a, t_stack *b, size_t	i);
 void			ft_array_compare(t_stack *stack, int *array);
 
 int				ft_first(struct s_stack *stack);
@@ -52,6 +57,7 @@ int				ft_counter(t_stack *a);
 int				*ft_array(t_stack *stack);
 int				*ft_sort_array(t_stack *stack, int *array);
 int				ft_empty_arg(char *str);
+int				ft_max_index(t_stack *stack, size_t i);
 
 t_stack			*ft_set_stack(void);
 

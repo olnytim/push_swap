@@ -65,8 +65,10 @@ void	ft_argchecker(int ac, char *av, t_stack *a)
 	if (ac > 1)
 	{
 		temp = ft_split(av, ' ');
-		i = ac - 1;
-		while (temp[i] && i > 0)
+		while (temp[i])
+			++i;
+		--i;
+		while (temp[i] && i >= 0)
 		{
 			if (ft_isnum(temp[i]) == 1)
 				exit(0);

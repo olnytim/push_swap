@@ -41,38 +41,49 @@ int	ft_done(t_stack *a)
 
 void	ft_push_swap(t_stack *a, t_stack *b)
 {
-	(void)b;
-	if (ft_counter(a) < 3)
+	size_t	i;
+
+	i = (size_t)ft_counter(a);
+	if (i == 2)
 		sorting_2(a);
+	else if (i == 3)
+		sorting_3(a);
+	else if (i == 4)
+		sorting_4(a, b);
+	else if (i == 5)
+		sorting_5(a, b);
+	else
+	{
+		ft_butterfly(a, b, i);
+		ft_push_all(a, b, i);
+	}
 }
 
 int	main(int ac, char **av)
 {
 	struct s_stack	*a;
-	// struct s_stack	*b;
+	struct s_stack	*b;
 	char			*str;
 
 	ac = 1;
 	str = ft_strdup(av[ac++]);
 	while (av[ac])
 	{
-		// if (ft_empty_arg(av[i]))
-		// 	exit(1);
 		str = ft_strjoin_gnl(str, " ");
 		str = ft_strjoin_gnl(str, av[ac]);
 		++ac;
 	}
-	ft_printf("%s\n", str);
+	// ft_printf("%s\n", str);
 	a = ft_set_stack();
 	ft_argchecker(ac, str, a);
-	// if (!ft_done(a))
-	// 	return (0);
-	// ft_array_compare(a, ft_sort_array(a, ft_array(a)));
-	// b = ft_set_stack();
-	// ft_push_swap(a, b);
-	ft_printf("------------\n");
-	ft_print(a);
-	system("leaks push_swap");
+	if (!ft_done(a))
+		return (0);
+	ft_array_compare(a, ft_sort_array(a, ft_array(a)));
+	b = ft_set_stack();
+	ft_push_swap(a, b);
+	// ft_printf("------------\n");
+	// ft_print(a);
+	// system("leaks push_swap");
 	return (0);
 }
 
