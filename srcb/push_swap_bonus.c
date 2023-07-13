@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../hf/push_swap.h"
+#include "../hf/push_swap_bonus.h"
 
 void	ft_error(char *str)
 {
@@ -18,7 +18,7 @@ void	ft_error(char *str)
 	exit(1);
 }
 
-static int	ft_done(t_stack *a)
+int	ft_done(t_stack *a)
 {
 	t_node	*temp;
 
@@ -32,25 +32,25 @@ static int	ft_done(t_stack *a)
 	return (0);
 }
 
-static void	ft_push_swap(t_stack *a, t_stack *b)
-{
-	int	i;
+// static void	ft_push_swap(t_stack *a, t_stack *b)
+// {
+// 	int	i;
 
-	i = (int)ft_counter(a);
-	if (i == 2)
-		sorting_2(a);
-	else if (i == 3)
-		sorting_3(a);
-	else if (i == 4)
-		sorting_4(a, b);
-	else if (i == 5)
-		sorting_5(a, b);
-	else
-	{
-		ft_butterfly(a, b, i);
-		ft_push_all(a, b, i);
-	}
-}
+// 	i = (int)ft_counter(a);
+// 	if (i == 2)
+// 		sorting_2(a);
+// 	else if (i == 3)
+// 		sorting_3(a);
+// 	else if (i == 4)
+// 		sorting_4(a, b);
+// 	else if (i == 5)
+// 		sorting_5(a, b);
+// 	else
+// 	{
+// 		ft_butterfly(a, b, i);
+// 		ft_push_all(a, b, i);
+// 	}
+// }
 
 static char	*ft_set_array(char **av)
 {
@@ -86,7 +86,8 @@ int	main(int ac, char **av)
 		ac = ft_counter(a);
 		ft_array_compare(a, ft_sort_array(ft_array(a, ac), ac), ac);
 		b = ft_set_stack();
-		ft_push_swap(a, b);
+		ft_checker(a, b);
+		// ft_push_swap(a, b);
 	}
 	return (0);
 }

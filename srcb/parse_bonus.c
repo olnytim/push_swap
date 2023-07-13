@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../hf/push_swap.h"
+#include "../hf/push_swap_bonus.h"
 
 int	ft_empty_arg(char *str)
 {
