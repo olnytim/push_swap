@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                    *._           _.*   @   */
+/*   checker.c                                          |\  \\_//  /|     #   */
+/*                                                      \/         \/     $   */
+/*   By: olnytim <yearagotomorrow@gmail.com>           _|_    V  V  |_    %   */
+/*                                                  *=.    =  _*  =   .=* ^   */
+/*   Created: 2023/07/14 02:08:09 by olnytim           \= ___________=/   &   */
+/*   Updated: 2023/07/14 02:08:21 by olnytim                /     \       *   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../hf/push_swap_bonus.h"
 
 static void	ft_input(t_stack *a, t_stack *b, char *str)
@@ -36,7 +48,7 @@ void	ft_checker(t_stack *a, t_stack *b)
 	{
 		str = get_next_line(0);
 		if (!str)
-			break;
+			break ;
 		ft_input(a, b, str);
 		free(str);
 	}
