@@ -24,7 +24,7 @@ Welcome to the **Push_Swap** project! 🚀
 - Make
 
 ## 🛠️ Installation
-1. Clone the repository: `git@github.com:olnytim/push_swap.git`
+1. Clone the repository: `git clone git@github.com:olnytim/push_swap.git`
 2. Navigate to the project directory: `cd push_swap`
 3. Compile the project: `make`
 4. Compile the bonus-checker: `make bonus`
